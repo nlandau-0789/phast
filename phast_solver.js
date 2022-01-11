@@ -25,10 +25,11 @@ function compare(a, b) {
     return 0;
 }
 
-exercice = document.querySelector("[shown_id]").getAttribute("shown_id");
-
-eval("exercice_"+exercice+"();");
-
+function onload(){
+    exercice = document.querySelector("[shown_id]").getAttribute("shown_id");
+    eval("exercice_"+exercice+"();");
+}
+    
 function from1rowTab(){
     a = document.getElementsByTagName("td")
     b = [];
