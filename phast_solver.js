@@ -126,92 +126,92 @@ function exercice_1901(){
 
 function exercice_1902(){
     a = from1rowTab();
-    alert(mediane(a))
+    answer(mediane(a))
 }
 
 function exercice_1903(){
     a = from1rowTab();
-    alert(premier_quartile(a))
+    answer(premier_quartile(a))
 }
 
 function exercice_1904(){
     a = from1rowTab();
-    alert(troisieme_quartile(a))
+    answer(troisieme_quartile(a))
 }
 
 function exercice_1906(){
     a = fromChartData();
-    alert(moyenne(a))
+    answer(moyenne(a))
 }
 
 function exercice_1907(){
     a = fromChartData();
-    alert(mediane(a))
+    answer(mediane(a))
 }
 
 function exercice_1908(){
     a = fromChartData();
-    alert(premier_quartile(a))
+    answer(premier_quartile(a))
 }
 
 function exercice_1911(){
     a = fromPieData();
-    alert(moyenne(a))
+    answer(moyenne(a))
 }
 
 function exercice_1913(){
     a = fromPieData();
-    alert(mediane(a))
+    answer(mediane(a))
 }
 
 function exercice_1917(){
     a = fromPieDataFreq();
-    alert(moyenne(a))
+    answer(moyenne(a))
 }
 
 function exercice_1920(){
     a = fromPieDataFreq();
-    alert(troisieme_quartile(a))
+    answer(troisieme_quartile(a))
 }
 
 function exercice_1922(){
     a = from2rowTab();
-    alert(moyenne(a))
+    answer(moyenne(a))
 }
 
 function exercice_1923(){
     a = from2rowTab();
-    alert(mediane(a))
+    answer(mediane(a))
 }
 
 function exercice_1928(){
     a = from2rowTabFreq();
-    alert(mediane(a))
+    answer(mediane(a))
 }
 
 function exercice_1948(){
     a = from1rowTab();
-    alert(ecart_type(a))
+    answer(ecart_type(a))
 }
 
 function exercice_1951(){
     a = fromChartData();
-    alert(ecart_type(a))
+    answer(ecart_type(a))
 }
 
 function exercice_1953(){
     a = fromPieData();
-    alert(ecart_type(a))
+    answer(ecart_type(a))
 }
 
 function exercice_1957(){
     a = from2rowTab();
-    alert(ecart_type(a))
+    answer(ecart_type(a))
 }
 
 function exercice_1959(){
     a = from2rowTabFreq();
-    alert(ecart_type(a))
+    answer(ecart_type(a))
 }
 // Appeler achèvement pour terminer
 completion("qqch");
