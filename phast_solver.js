@@ -12,7 +12,7 @@ function answer(a){
     mathquill = $(".mathquill-rendered-math")
     mathquill.mathquill('write', a)
     document.querySelector("#exercise_container > div.question_container > div > div.exercise_right_panel > form > div.exercise_buttons > a.btn.btn-success.exercise_submit").click()
-    setTimeout(document.querySelector("#exercise_container > div.question_container > div > div.exercise_right_panel > form > div.exercise_buttons > a.btn.btn-success.exercise_next").click,1000)
+    setTimeout(function(){document.querySelector("#exercise_container > div.question_container > div > div.exercise_right_panel > form > div.exercise_buttons > a.btn.btn-success.exercise_next").click()},1000)
 }
 
 function compare(a, b) {
