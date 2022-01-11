@@ -220,5 +220,3 @@ function exercice_1959(){
     a = from2rowTabFreq();
     answer(ecart_type(a))
 }
-// Appeler achèvement pour terminer
-completion("qqch");
