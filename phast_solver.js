@@ -27,8 +27,6 @@ function from1rowTab(){
 
 function from2rowTab(){
     a = document.getElementsByTagName("tr")
-    console.log(a)
-    console.log(a[0])
     b = [];
     for (var i = 1; i < a[0].children.length; i++) {
         for (var j = 0; j < parseInt(a[1].children[i].innerHTML); j++){
@@ -41,8 +39,6 @@ function from2rowTab(){
 
 function from2rowTabFreq(){
     a = document.getElementsByTagName("tr")
-    console.log(a)
-    console.log(a[0])
     b = [];
     for (var i = 1; i < a[0].children.length; i++) {
         for (var j = 0; j < parseInt(a[1].children[i].innerHTML.trim()); j++){
@@ -100,6 +96,23 @@ function mediane(a){
     return a[Math.floor(a.length/2)]
 }
 
+function premier_quartile(a){
+    return a[Math.ceil(a.length/4)-1]
+}
+
+function troisieme_quartile(a){
+    return a[Math.ceil(a.length*3/4)-1]
+}
+
+function ecart_type(a){
+    m = moyenne(a)
+    total = 0
+    for (i = 0; i < a.length; i++){
+        total += (a[i]-m)**2
+    }
+    return Math.round(Math.sqrt(total/a.length)*100)/100
+}
+
 function exercice_1901(){
     a = from1rowTab();
     alert(moyenne(a))
@@ -107,8 +120,17 @@ function exercice_1901(){
 
 function exercice_1902(){
     a = from1rowTab();
-    console.log(a)
     alert(mediane(a))
+}
+
+function exercice_1903(){
+    a = from1rowTab();
+    alert(premier_quartile(a))
+}
+
+function exercice_1904(){
+    a = from1rowTab();
+    alert(troisieme_quartile(a))
 }
 
 function exercice_1906(){
@@ -119,6 +141,11 @@ function exercice_1906(){
 function exercice_1907(){
     a = fromChartData();
     alert(mediane(a))
+}
+
+function exercice_1908(){
+    a = fromChartData();
+    alert(premier_quartile(a))
 }
 
 function exercice_1911(){
@@ -136,6 +163,11 @@ function exercice_1917(){
     alert(moyenne(a))
 }
 
+function exercice_1920(){
+    a = fromPieDataFreq();
+    alert(troisieme_quartile(a))
+}
+
 function exercice_1922(){
     a = from2rowTab();
     alert(moyenne(a))
@@ -149,6 +181,31 @@ function exercice_1923(){
 function exercice_1928(){
     a = from2rowTabFreq();
     alert(mediane(a))
+}
+
+function exercice_1948(){
+    a = from1rowTab();
+    alert(ecart_type(a))
+}
+
+function exercice_1951(){
+    a = fromChartData();
+    alert(ecart_type(a))
+}
+
+function exercice_1953(){
+    a = fromPieData();
+    alert(ecart_type(a))
+}
+
+function exercice_1957(){
+    a = from2rowTab();
+    alert(ecart_type(a))
+}
+
+function exercice_1959(){
+    a = from2rowTabFreq();
+    alert(ecart_type(a))
 }
 // Appeler achèvement pour terminer
 completion("qqch");
