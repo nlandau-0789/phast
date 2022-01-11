@@ -78,7 +78,7 @@ function fromPieData(){
 }
 
 function fromPieDataFreq(){
-    a = JSON.parse(document.document.querySelector("[data-kwyk=pie_percentage-data]").innerText)
+    a = JSON.parse(document.querySelector("[data-kwyk=pie_percentage-data]").innerText)
     b = [];
     for (var i = 0; i < a.data.length; i++) {
         for (var j = 0; j < a.data[i].y; j++) {
@@ -132,7 +132,7 @@ function exercice_1913(){
 }
 
 function exercice_1917(){
-    a = fromPieData();
+    a = fromPieDataFreq();
     alert(moyenne(a))
 }
 
