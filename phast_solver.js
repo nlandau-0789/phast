@@ -25,7 +25,8 @@ function compare(a, b) {
     return 0;
 }
 
-function onload(){
+function main(){
+    alert("loaded")
     exercice = document.querySelector("[shown_id]").getAttribute("shown_id");
     eval("exercice_"+exercice+"();");
 }
