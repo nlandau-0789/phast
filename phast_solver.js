@@ -77,6 +77,18 @@ function fromPieData(){
     return b;
 }
 
+function fromPieDataFreq(){
+    a = JSON.parse(document.document.querySelector("[data-kwyk=pie_percentage-data]").innerText)
+    b = [];
+    for (var i = 0; i < a.data.length; i++) {
+        for (var j = 0; j < a.data[i].y; j++) {
+            b.push(parseInt(a.data[i].name))
+        }
+    }
+    b.sort(compare)
+    return b;
+}
+
 function moyenne(a){
     total = 0
     a.forEach(element => total+=element);
@@ -117,6 +129,11 @@ function exercice_1911(){
 function exercice_1913(){
     a = fromPieData();
     alert(mediane(a))
+}
+
+function exercice_1917(){
+    a = fromPieData();
+    alert(moyenne(a))
 }
 
 function exercice_1922(){
