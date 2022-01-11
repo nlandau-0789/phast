@@ -96,6 +96,11 @@ function fromPieDataFreq(){
     return b;
 }
 
+function isNumeric(str) {
+  if (typeof str != "string") return false
+  return !isNaN(str) && !isNaN(parseFloat(str))
+}
+
 function moyenne(a){
     total = 0
     a.forEach(element => total+=element);
@@ -217,4 +222,20 @@ function exercice_1957(){
 function exercice_1959(){
     a = from2rowTabFreq();
     answer(ecart_type(a))
+}
+
+function exercice_5020(){
+    p = document.querySelector("#exercise_container > div.question_container > div > div.exercise_question").textContent.split(' ');
+    values = []
+    for(i = 0; i < p.length; i++){
+        if(isNumeric(p[i])){
+            values.push(parseInt(p[i]))
+        }
+    }
+    salaire_cadres = values[0]
+    salaire_non_cadres = values[1]
+    salaire_moyen = values[2]
+    nbCadres = values[3]
+    nbNonCadres = parseInt(nbCadres*(salaire_cadres-salaire_moyen)/(salaire_moyen-salaire_non_cadres))
+    answer(nbNonCadres+nbCadres)
 }
