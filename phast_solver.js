@@ -7,6 +7,12 @@ if(typeof(String.prototype.trim) === "undefined")
     };
 }
 
+function answer(a){
+    a = String(a).replace(".", ",")
+    mathquill = $(".mathquill-rendered-math")
+    mathquill.mathquill('write', a)
+}
+
 function compare(a, b) {
     if (a < b) return -1;
     if (a > b) return 1;
@@ -115,7 +121,7 @@ function ecart_type(a){
 
 function exercice_1901(){
     a = from1rowTab();
-    alert(moyenne(a))
+    answer(moyenne(a))
 }
 
 function exercice_1902(){
