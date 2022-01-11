@@ -25,11 +25,8 @@ function compare(a, b) {
     return 0;
 }
 
-function main(){
-    alert("loaded")
-    exercice = document.querySelector("[shown_id]").getAttribute("shown_id");
-    eval("exercice_"+exercice+"();");
-}
+exercice = document.querySelector("[shown_id]").getAttribute("shown_id");
+eval("exercice_"+exercice+"();");
     
 function from1rowTab(){
     a = document.getElementsByTagName("td")
