@@ -11,6 +11,7 @@ function answer(a){
     a = String(a).replace(".", ",")
     mathquill = $(".mathquill-rendered-math")
     mathquill.mathquill('write', a)
+    document.querySelector("#exercise_container > div.question_container > div > div.exercise_right_panel > form > div.exercise_buttons > a.btn.btn-success.exercise_submit").click()
 }
 
 function compare(a, b) {
