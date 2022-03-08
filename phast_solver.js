@@ -26,8 +26,11 @@ function compare(a, b) {
 }
 
 exercice = document.querySelector("[shown_id]").getAttribute("shown_id");
-eval("exercice_"+exercice+"();");
-    
+try{
+    eval("exercice_"+exercice+"();");
+} catch (e) {
+    alert("exercice non référencé");
+}
 function from1rowTab(){
     a = document.getElementsByTagName("td")
     b = [];
