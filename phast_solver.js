@@ -15,6 +15,10 @@ function answer(a){
         document.querySelector("#exercise_container > div.question_container > div > div.exercise_right_panel > form > div.exercise_buttons > a.btn.btn-success.exercise_submit").click()
         setTimeout(function(){document.querySelector("#exercise_container > div.question_container > div > div.exercise_right_panel > form > div.exercise_buttons > a.btn.btn-success.exercise_next").click()},1000)
     } catch (err) {
+        try{
+            document.querySelector("#id_answer_0").type = "";
+            document.querySelector("#id_answer_0").style.display = "inline";
+        } catch (e) {}
         alert(a)
     }
 }
@@ -132,6 +136,20 @@ function ecart_type(a){
     return Math.round(Math.sqrt(total/a.length)*100)/100
 }
 
+function gcd(x, y) {
+    if ((typeof x !== 'number') || (typeof y !== 'number')) 
+      return false;
+    x = Math.abs(x);
+    y = Math.abs(y);
+    while(y) {
+      var t = y;
+      y = x % y;
+      x = t;
+    }
+    return x;
+  }
+  
+
 function exercice_1901(){
     a = from1rowTab();
     answer(moyenne(a))
@@ -241,4 +259,38 @@ function exercice_5020(){
     nbCadres = values[3]
     nbNonCadres = parseInt(nbCadres*(salaire_cadres-salaire_moyen)/(salaire_moyen-salaire_non_cadres))
     answer(nbNonCadres+nbCadres)
+}
+
+function exercice_4020(){
+    a = document.querySelector("#exercise_container > div.question_container > div > div.exercise_question > span:nth-child(1) > span > span > span.katex-mathml > math > semantics > annotation").textContent;
+    let values = ""
+    for(let i = 0; i < a.length; i++){
+        if (isNumeric(a[i])){
+            values+=a[i];
+        } else {
+            values+=" ";
+        }
+    }
+    values = values.split(" ").filter(i => i !== "");
+    a = values[2] * values[5] + Math.sqrt(values[1] * values[4]) * values[0] * values[3]
+    b = values[5] * values[0] + values[2] * values[3]
+    c = values[1]
+    answer(String(a)+"+"+String(b)+"\\sqrt{"+String(c)+"}")
+}
+
+function exercice_4026(){
+    a = document.querySelector("#exercise_container > div.question_container > div > div.exercise_question > span:nth-child(1) > span > span > span.katex-mathml > math > semantics > annotation").textContent;
+    let values = ""
+    for(let i = 0; i < a.length; i++){
+        if (isNumeric(a[i])){
+            values+=a[i];
+        } else {
+            values+=" ";
+        }
+    }
+    values = values.split(" ").filter(i => i !== "");
+    a = values[2] * values[2] + Math.sqrt(values[1] * values[1]) * values[0] * values[0]
+    b = values[2] * values[0] + values[2] * values[0]
+    c = values[1]
+    answer(String(a)+"+"+String(b)+"\\sqrt{"+String(c)+"}")
 }
