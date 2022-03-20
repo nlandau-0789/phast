@@ -143,8 +143,11 @@ function gcd(x, y) {
       x = t;
     }
     return x;
-  }
-  
+}
+
+function isInt(n) {
+    return n % 1 === 0;
+}
 
 function exercice_1901(){
     a = from1rowTab();
@@ -272,4 +275,14 @@ function exercice_4020(){
     b = values[5] * values[0] + values[2] * values[3]
     c = values[1]
     answer(String(a)+"+"+String(b)+"\\sqrt{"+String(c)+"}")
+}
+
+function exercice_45041(){
+    expr = document.querySelectorAll("math > semantics > annotation")[4].textContent;
+    a = expr.split(",")[0]
+    expr = expr.split(",")[1]
+    b = expr.split(" ")[0]
+    expr = expr.split(" ")[2]
+    c = -parseInt(expr.split("{")[1].split("}")[0])
+    answer(`${a}${b}/10^${parseInt(c)+b.length}`)
 }
