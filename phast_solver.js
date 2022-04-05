@@ -30,6 +30,7 @@ try{
     eval("exercice_"+exercice+"();");
 } catch (e) {
     alert("exercice non référencé");
+    console.log(e);
 }
 function from1rowTab(){
     a = document.getElementsByTagName("td")
@@ -285,4 +286,22 @@ function exercice_45041(){
     expr = expr.split(" ")[2]
     c = -parseInt(expr.split("{")[1].split("}")[0])
     answer(`${a}${b}/10^${parseInt(c)+b.length}`)
+}
+
+function exercice_1644(){
+    expr = document.querySelector("#exercise_container > div.question_container > div > div.exercise_question > span:nth-child(3) > span > span.katex-mathml > math > semantics > annotation").textContent.replace("{","(").replace("}",")").replace("^", "**");
+    tests = document.querySelector("#exercise_container > div.question_container > div > div.exercise_question > span:nth-child(4) > span > span > span.katex-mathml > math > semantics > mrow > mtable").children;
+    res = ""
+    for(let i = 0; i < 5; i++){
+        test = tests[i].children[1].textContent.replace("(","").replace(")","").replace("−","-").split(";")
+        newExpr = expr.replace("x", "*("+String(test[0])+")")
+        if(newExpr[0] === "*"){newExpr = newExpr.substring(1)}
+        if(eval(newExpr.replace("−","-")) == test[1]){
+            res += "Vrai\n"
+        } else {
+            res += "Faux\n"
+        }
+        console.log(newExpr + " = " + String(eval(newExpr.replace("−","-"))))
+    }
+    answer(res)
 }
