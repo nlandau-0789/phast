@@ -296,12 +296,12 @@ function exercice_1644(){
         test = tests[i].children[1].textContent.replace("(","").replace(")","").replace("−","-").split(";")
         newExpr = expr.replace("x", "*("+String(test[0])+")")
         if(newExpr[0] === "*"){newExpr = newExpr.substring(1)}
-        if(eval(newExpr.replace("−","-")) == test[1]){
+        if(eval(newExpr.replace("−","-")) == test[1].replace("−","-")){
             res += "Vrai\n"
         } else {
             res += "Faux\n"
         }
-        console.log(newExpr + " = " + String(eval(newExpr.replace("−","-"))))
+        console.log(newExpr + " = " + String(eval(newExpr.replace("−","-"))) + " => " + String(test[1].replace("−","-")))
     }
     answer(res)
 }
