@@ -150,6 +150,26 @@ function isInt(n) {
     return n % 1 === 0;
 }
 
+function getMathExpr(){
+    exprs = document.querySelectorAll("#exercise_container math > semantics > annotation");
+    textExprs = Array()
+    for(i=0; i < exprs.length;i++){
+        textExprs.push(exprs[i].textContent.replace("−","-"))
+    }
+    console.log(textExprs)
+    return textExprs
+}
+
+function extractPointCoords(point){
+    let pointx = parseInt(point.split(';')[0].split("(")[1].trim())
+    let pointy = parseInt(point.split(';')[1].split("\\")[0].trim())
+    return {"x":pointx,"y":pointy}
+}
+
+function epc(point){
+    return extractPointCoords(point)
+}
+
 function exercice_1901(){
     a = from1rowTab();
     answer(moyenne(a))
@@ -320,14 +340,21 @@ function exercice_20014(){
 }
 
 function exercice_20096(){
-    let a = document.querySelector("#exercise_container > div:nth-child(2) > div > div.exercise_question > p > span:nth-child(3) > span > span.katex-mathml > math > semantics > annotation").textContent.replace("−","-");
+    let a = getMathExpr()[0];
     let ax = parseInt(a.split(';')[0].split("(")[1].trim())
     let ay = parseInt(a.split(';')[1].split("\\")[0].trim())
-    let b = document.querySelector("#exercise_container > div:nth-child(2) > div > div.exercise_question > p > span:nth-child(4) > span > span.katex-mathml > math > semantics > annotation").textContent.replace("−","-");
+    let b = getMathExpr()[1];
     let bx = parseInt(b.split(';')[0].split("(")[1].trim())
     let by = parseInt(b.split(';')[1].split("\\")[0].trim())
     console.log(a,"|", ax,"|", ay)
     console.log(b,"|", bx,"|", by)
-    answer(moyenne([ax,bx]))
-    answer(moyenne([ay,by]))
+    answer(2*bx-ax)
+    answer(2*by-ay)
+}
+
+function exercice_20018(){
+    let a = epc(getMathExpr()[0]);
+    let b = epc(getMathExpr()[1]);
+    let c = epc(getMathExpr()[2]);
+    console.log(a,"|", b,"|", c);
 }
