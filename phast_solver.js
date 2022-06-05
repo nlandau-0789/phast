@@ -357,4 +357,23 @@ function exercice_20018(){
     let b = epc(getMathExpr()[1]);
     let c = epc(getMathExpr()[2]);
     console.log(a,"|", b,"|", c);
+    answer(a.x-b.x+c.x)
+    answer(a.y-b.y+c.y)
 }
+
+function exercice_20066(){
+    let p = epc(getMathExpr()[1])
+    let m = epc(getMathExpr()[4])
+    let r = parseInt(getMathExpr()[2])
+    answer(d = ((m.x-p.x)**2+(m.y-p.y)**2)**0.5)
+    console.log(r,d)
+    if (d < r){
+        answer("Le point M est à l'intérieur du cercle C")
+    } else if (d === r) {
+        answer("Le point M est sur le cercle C")
+    } else {
+        answer("Le point M est à l'exterieur du cercle C")
+    }
+}
+
+function exercice_1649(){}
