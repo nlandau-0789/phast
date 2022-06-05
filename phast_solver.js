@@ -305,3 +305,29 @@ function exercice_1644(){
     }
     answer(res)
 }
+
+function exercice_20014(){
+    let a = document.querySelector("#exercise_container > div:nth-child(2) > div > div.exercise_question > p > span:nth-child(3) > span > span.katex-mathml > math > semantics > annotation").textContent.replace("−","-");
+    let ax = parseInt(a.split(';')[0].split("(")[1].trim())
+    let ay = parseInt(a.split(';')[1].split("\\")[0].trim())
+    let b = document.querySelector("#exercise_container > div:nth-child(2) > div > div.exercise_question > p > span:nth-child(4) > span > span.katex-mathml > math > semantics > annotation").textContent.replace("−","-");
+    let bx = parseInt(b.split(';')[0].split("(")[1].trim())
+    let by = parseInt(b.split(';')[1].split("\\")[0].trim())
+    console.log(a,"|", ax,"|", ay)
+    console.log(b,"|", bx,"|", by)
+    answer(moyenne([ax,bx]))
+    answer(moyenne([ay,by]))
+}
+
+function exercice_20096(){
+    let a = document.querySelector("#exercise_container > div:nth-child(2) > div > div.exercise_question > p > span:nth-child(3) > span > span.katex-mathml > math > semantics > annotation").textContent.replace("−","-");
+    let ax = parseInt(a.split(';')[0].split("(")[1].trim())
+    let ay = parseInt(a.split(';')[1].split("\\")[0].trim())
+    let b = document.querySelector("#exercise_container > div:nth-child(2) > div > div.exercise_question > p > span:nth-child(4) > span > span.katex-mathml > math > semantics > annotation").textContent.replace("−","-");
+    let bx = parseInt(b.split(';')[0].split("(")[1].trim())
+    let by = parseInt(b.split(';')[1].split("\\")[0].trim())
+    console.log(a,"|", ax,"|", ay)
+    console.log(b,"|", bx,"|", by)
+    answer(moyenne([ax,bx]))
+    answer(moyenne([ay,by]))
+}
