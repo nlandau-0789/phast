@@ -395,7 +395,36 @@ function exercice_1638(){
     let b = A.y-(coeff*A.x)
     let plus = "";
     if (b >= 0){
-        let plus = "+";
+        plus = "+";
     }
     answer(`y=${coeff}x${plus}${b}`)
+}
+
+function exercice_1615(){
+    expr = document.querySelector("#exercise_container > div.question_container > div > div.exercise_question > div.figure-data.rendered").textContent.replace("−","-");
+    console.log(expr)
+    expr = JSON.parse(expr)
+    console.log(expr["plot"][0][0].split(" "))
+    expr = expr["plot"][0][0].split(" ");
+    for(i = 0; i < expr.length; i++){
+        if (isNumeric(expr[i])){
+            answer(expr[i])
+            return
+        }
+    }
+}
+
+function exercice_1614(){
+    expr = document.querySelector("#exercise_container > div.question_container > div > div.exercise_question > div.figure-data.rendered").textContent.replace("−","-");
+    console.log(expr)
+    expr = JSON.parse(expr)
+    console.log(expr["plot"][0][0].split(" "))
+    expr = expr["plot"][0][0].split("return")[1].split(";")[0].split(" ");
+    let final = ""
+    for(i = 0; i < expr.length; i++){
+        if (!isNumeric(expr[i])){
+            final += expr[i]
+        }
+    }
+    answer(final.split("*x")[0])
 }
