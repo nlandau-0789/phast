@@ -428,3 +428,29 @@ function exercice_1614(){
     }
     answer(final.split("*x")[0])
 }
+
+function exercice_1631(){
+    expr = getMathExpr()[0].split(" ")
+    coeff = expr[3].split("x")[0]
+    if (coeff === ""){coeff = "1"}
+    coeff = parseInt(coeff)
+    b = parseInt(expr[4])
+    console.log(coeff, b)
+    pts = getMathExpr()[1].split("&")
+    raie_ponce = Array()
+    for (i=1; i < pts.length; i++){
+        pt = epc(pts[i])
+        if (pt.x*coeff+b === pt.y) {raie_ponce.push("▣")}
+        else {raie_ponce.push("▢")}
+    }
+    answer(String(raie_ponce))
+}
+
+function exercice_1636(){
+    expr = document.querySelector("#exercise_container > div.question_container > div > div.exercise_question > div.figure-data.rendered").textContent.replace("−","-");
+    console.log(expr)
+    expr = JSON.parse(expr)
+    console.log(expr["plot"][0][0].split(" "))
+    expr = expr["plot"][0][0].split("return")[1].split(";")[0];
+    answer("y = "+expr)
+}
