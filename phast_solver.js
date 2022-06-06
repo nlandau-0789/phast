@@ -376,4 +376,26 @@ function exercice_20066(){
     }
 }
 
-function exercice_1649(){}
+function exercice_1649(){
+    let coeff = parseInt(getMathExpr()[1]);
+    let A = epc(getMathExpr()[2]);
+    let b = A.y-(coeff*A.x)
+    let plus = "";
+    if (b >= 0){
+        let plus = "+";
+    }
+    answer(`y=${coeff}x${plus}${b}`)
+}
+
+function exercice_1638(){
+    let exprs = getMathExpr()[0].split("et");
+    let A = epc(exprs[0])
+    let B = epc(exprs[1])
+    let coeff = (B.y-A.y)/(B.x-A.x)
+    let b = A.y-(coeff*A.x)
+    let plus = "";
+    if (b >= 0){
+        let plus = "+";
+    }
+    answer(`y=${coeff}x${plus}${b}`)
+}
